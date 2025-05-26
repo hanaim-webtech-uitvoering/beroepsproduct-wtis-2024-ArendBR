@@ -1,7 +1,7 @@
-<!--
+
 <?php
 // require_once "applicatie/header.php";
-// require_once "sidebar.php";
+ require_once "sidebar.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Airport</title>
+  <title>privacyverklaring</title>
 </head>
 
 <body>
@@ -21,9 +21,11 @@
   //  createHeader();
     ?>
     <?php
-    //  createSidebar();
+     createSidebar();
     ?>
-
+<?php 
+echo "Privacyverklaring";
+?>
     <div class="content-right">
       <img class="privacyverklaring" src="afbeeldingen/privacyverklaring.png" alt="" />
     </div>
@@ -33,4 +35,3 @@
 </body>
 
 </html>
--->

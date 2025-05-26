@@ -16,7 +16,7 @@ function createSidebar()
       </li>
       
         <li class="knop">
-          <a href="privacyVerklaring.php">privacyverklaring</a>
+          <a href="privacyverklaring.php">privacyverklaring</a>
         </li>
         
       </ul>
