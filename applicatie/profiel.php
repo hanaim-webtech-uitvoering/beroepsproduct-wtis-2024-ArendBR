@@ -21,13 +21,12 @@
     ?>
     <?php
      createSidebar();
+     echo('profiel');
     ?>
 
-    <div class="content-right">
-      <?php
-        echo "Profiel";
-      ?>
-    </div>
+  
+
+      </form>
   </main>
 
   <footer></footer>

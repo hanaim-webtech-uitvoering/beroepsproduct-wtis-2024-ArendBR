@@ -12,7 +12,7 @@ function createSidebar()
         </li>
 
         <li class="knop">
-        <a href="profiel.php">profiel</a>
+        <a href="loginregistratie.php">profiel</a>
       </li>
       
         <li class="knop">
