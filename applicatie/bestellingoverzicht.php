@@ -28,15 +28,15 @@
     <td>Klant</td>
     <td>Bestelling</td>
     <td>Status</td>
-    <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
-    <td> <a href="loginregistratie.php"><button name="detailoverzicht" value="detailoverzicht" type="submit">Detailoverzicht</button> </a></td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Arend</td>
     <td>Pizza Margherita</td>
     <td>Status</td>
     <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
-    <td> <a href="loginregistratie.php"><button name="detailoverzicht" value="detailoverzicht" type="submit">Detailoverzicht</button> </a></td>
+    <td> <a href="detailoverzicht.php"><button name="detailoverzicht" value="detailoverzicht" type="submit">Detailoverzicht</button> </a></td>
   </tr>
 </table>
     </div>
