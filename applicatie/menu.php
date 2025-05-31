@@ -1,5 +1,5 @@
 <?php
-// require_once "applicatie/header.php";
+ require_once "header.php";
  require_once "sidebar.php";
 ?>
 
@@ -10,14 +10,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Airport</title>
+  <title>Pizzeria</title>
 </head>
 
 <body>
   <main>
 
     <?php
-  //  createHeader();
+    createHeader();
     ?>
     <?php
      createSidebar();
@@ -38,7 +38,7 @@
               <th>4</th>
               
               <?php
-             // createvluchtlijst();
+             // createmenulijst();
               ?>
 
             </table>
@@ -52,7 +52,9 @@
               ?>
   </main>
 
-  <footer></footer>
+<?php
+  createFooter();
+  ?>
 </body>
 
 </html>

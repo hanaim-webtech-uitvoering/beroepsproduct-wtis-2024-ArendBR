@@ -1,7 +1,8 @@
 <?php
 session_start();
-
-require_once 'db_connectie.php';
+$_SESSION["naam"] = "Arend";
+// $naam = $_SESSION['naam'];
+// require_once 'db_connectie.php';
 
 function createHeader()
 {
@@ -12,15 +13,18 @@ function createHeader()
     <ul class="flex-menu">
       <li>
         <a href="index.php" class="logo">
-          <img src="afbeeldingen/AirportLogo.png" alt="" />
+          <img src="Pizzalogo.png" alt="" class="logo"/>
         </a>
-      </li>     
+      </li>  
+      <li>
+        <a href="bestellingoverzicht.php" class="button">bestellingoverzicht</a>
+      </li>   
       <li>                  
     <a href="uitloggen.php" class="button">Uitloggen</a>
     </li>
   </ul>
   </nav>';
-  } elseif (isset($_SESSION['balienummer'])) {
+   } /*   elseif (isset($_SESSION['balienummer'])) {
     echo '    
   <nav class="topnav">
   <ul class="flex-menu">
@@ -50,7 +54,7 @@ function createHeader()
 </nav>';
   }
   ;
-
+*/
 }
 
 ?>

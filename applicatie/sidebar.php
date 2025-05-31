@@ -14,11 +14,6 @@ function createSidebar()
         <li class="knop">
         <a href="loginregistratie.php">profiel</a>
       </li>
-      
-        <li class="knop">
-          <a href="privacyverklaring.php">privacyverklaring</a>
-        </li>
-        
       </ul>
     </div>
 ';
@@ -40,9 +35,6 @@ function createSidebar()
                 <a href="passagierInformatie.php">passagiersinformatie</a>
               </li>
       
-              <li class="knop">
-                <a href="privacyVerklaring.php">privacyverklaring</a>
-              </li>
             </ul>
           </div>
       ';
@@ -55,12 +47,23 @@ function createSidebar()
       <li class="knop">
       <a href="Menu.php">Menu</a>
     </li>
-      <li class="knop">
-      <a href="privacyVerklaring.php">privacyverklaring</a>
-    </li>
   </ul>
 </div>
       ';
   } 
 } */
+
+
+function createFooter() {
+  echo '
+  <footer>
+    <div class="footer">
+      <li class="knop">
+        <a href="privacyverklaring.php">privacyverklaring</a>
+      </li>
+    </div>
+  </footer>
+';
+}
 ?>
+

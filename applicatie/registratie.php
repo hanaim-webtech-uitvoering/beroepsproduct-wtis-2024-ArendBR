@@ -27,21 +27,27 @@
       <!-- <form action="loginfunctie.php" method="POST"> -->
         <div>
           <label><b>Gebruikersnaam:</b></label>
-          <input name="naam" type="text" placeholder="Enter Username" name="naam" required />
+          <input name="naam" type="text" placeholder="Enter username" name="naam" required />
           </div>
           <div>
             <label><b>Wachtwoord:</b></label>
-            <input name="wachtwoord"  type="password" placeholder="Enter Password" name="wachtwoord"
+            <input name="wachtwoord"  type="password" placeholder="Enter password" name="wachtwoord"
               required />
           </div>
           <div>
-           <a href="profiel.php"> <button name="inloggen" value="inloggen" type="submit">Log in</button> </a>
-           <a href="registratie.php"> <button name="Registratie" value="registratie" type="submit">registratie</button> </a>
+            <label><b>Adres:</b></label>
+            <input name="adres"  type="text" placeholder="Enter adress" name="adres"
+              required />
           </div>
-
+          <div>
+            <button name="Registratie" value="registratie" type="submit">registratie</button>
+          </div>
+<!-- </form> -->
  </main>
 
-  <footer></footer>
+  <?php
+  createFooter();
+  ?>
 </body>
 
 </html>

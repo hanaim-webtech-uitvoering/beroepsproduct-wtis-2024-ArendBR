@@ -1,6 +1,6 @@
 
 <?php
-// require_once "applicatie/header.php";
+ require_once "header.php";
  require_once "sidebar.php";
 ?>
 
@@ -18,7 +18,7 @@
   <main>
 
     <?php
-  //  createHeader();
+    createHeader();
     ?>
     <?php
      createSidebar();
@@ -31,7 +31,9 @@ echo "Privacyverklaring";
     </div>
   </main>
 
-  <footer></footer>
+  <?php
+  createFooter();
+  ?>
 </body>
 
 </html>

@@ -12,23 +12,6 @@ body {
   background-color: #9e9e9e;
 }
 
-nav {
-  background: hsl(242, 40%, 34%);
-  color: #000000;
-}
-
-nav ul.flex-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0px 10px;
-}
-
-nav ul.flex-menu li {
-  display: flex;
-  align-items: center;
-}
-
 main {
   background: #ffffff;
   border-radius: 0px;
@@ -151,4 +134,54 @@ th, td{
     background-color: #df8c96;
     border-color: #df8c96;
   transition: .3s;
+}
+
+nav {
+  background: hsl(131, 40%, 34%);
+  color: #000000;
+  height: 50px;
+}
+
+nav ul.flex-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+nav ul.flex-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 2px;
+  height: 45px;
+  width: 35px;
+}
+
+.containermain {
+ text-align: center;
+ border: 3px solid #555454;
+ padding: 10px;
+ margin: 12% 35% 0px 40%;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-left#sidebar {
+    float: none;
+    width: 100%;
+  }
+}
+
+footer {
+  clear: both;
+  position: sticky;
+  background: hsl(137, 40%, 34%);
+  height: 40px;
+  text-align: center;
+}
+
+.bestellingoverzicht {
+    margin: 3% 5% 5% 15%;
 }
