@@ -1,0 +1,5 @@
+<?php
+createmenuoverzicht() {
+    $db = maakverbinding();
+}
+?>

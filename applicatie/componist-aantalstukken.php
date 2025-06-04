@@ -5,19 +5,17 @@ require_once 'db_connectie.php';
 $db = maakVerbinding();
 
 // haal alle componisten op en tel het aantal stukken
-$query = 'select c.componistId as id, c.naam as naam, count(S.stuknr) as aantal
-          from Componist C left outer join Stuk S on C.componistId = S.componistId
-          group by C.componistId, C.naam
-          order by naam';
+$query = 'select order_id as id, address as address, status as aantal
+from Pizza_Order';
 
 $data = $db->query($query);
 
 $html_table = '<table>';
-$html_table = $html_table . '<tr><th>Id</th><th>Naam</th><th>Aantal stukken</th></tr>';
+$html_table = $html_table . '<tr><th>Id</th><th>Address</th><th>Aantal stukken</th></tr>';
 
 while($rij = $data->fetch()) {
   $id = $rij['id'];
-  $naam = $rij['naam'];
+  $naam = $rij['address'];
   $aantal = $rij['aantal'];
   
   $html_table = $html_table . "<tr><td>$id</td><td>$naam</td><td>$aantal</td></tr>";
