@@ -1,5 +1,6 @@
 <?php
  require_once "header.php";
+ require_once "functions/createmenu.php";
  require_once "sidebar.php";
 ?>
 
@@ -33,12 +34,12 @@
           <div class=table-wrapper>
             <table>
               <th>Gerecht</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
+              <th>Prijs</th>
+              <th>Producttype</th>
+              <th>Toevoegen aan winkelmand</th>
               
               <?php
-             // createmenulijst();
+              createmenuoverzicht();
               ?>
 
             </table>
