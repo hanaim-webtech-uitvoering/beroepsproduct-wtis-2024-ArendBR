@@ -37,7 +37,7 @@
               <th>Prijs</th>
               <th>Producttype</th>
               <th>Toevoegen aan winkelmand</th>
-              
+  
               <?php
               createmenuoverzicht();
               ?>

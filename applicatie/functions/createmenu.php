@@ -33,10 +33,9 @@ function createmenuoverzicht() {
         echo "
 
        <tr>
-        <td> " . $result["name"] . " </td>
+        <td>" . $result["name"] . " </td>
         <td>" . $result["price"] . "</td>
         <td>" . $result["type_id"] . "</td>
-        <td> </td>
       </tr>
     ";
     } 

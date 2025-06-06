@@ -1,6 +1,7 @@
 <?php
  require_once "header.php";
  require_once "sidebar.php";
+ require_once "functions/createwinkelmand.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,25 +23,22 @@
     <?php
      createSidebar();
     ?>
-    <div class="detailoverzicht" >
+    <div class="outer-wrapper" >
+      <div class="table-wrapper">
       <table>
-  <tr>
-    <td>Klant</td>
-    <td>Adres</td>
-    <td>Bestelling</td>
-  </tr>
-  <tr>
-    <td>Arend</td>
-    <td>Langelaan 10</td>
-    <td>Pizza Salami
-        Kaas
-        Tomaat
-        Salami
-        Zonder ui
-    </td>
-  </tr>
+    <th>naam</th>
+    <th>Adres</th>
+    <th>product</th>
+    <th>prijs</th>
+    <th>type product </th>
+
+
+<?php
+createwinkelmand();
+?>
 </table>
     </div>
+</div>
  </main>
 
   <?php

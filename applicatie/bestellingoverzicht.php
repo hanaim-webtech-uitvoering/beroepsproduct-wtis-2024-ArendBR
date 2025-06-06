@@ -1,6 +1,7 @@
 <?php
  require_once "header.php";
  require_once "sidebar.php";
+ require_once "functions/createbestellingoverzicht.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,24 +23,27 @@
     <?php
      createSidebar();
     ?>
-    <div class="bestellingoverzicht" >
+   <div class="outer-wrapper" >
+      <div class="table-wrapper">
       <table>
-  <tr>
-    <td>Klant</td>
-    <td>Bestelling</td>
-    <td>Status</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Arend</td>
-    <td>Pizza Margherita</td>
-    <td>Status</td>
-    <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
+    <th>naam</th>
+    <th>Adres</th>
+    <th>product</th>
+    <th>prijs</th>
+    <th>type product </th>
+
+
+<?php
+createbestellingoverzicht();
+?>
+</table>
+    </div>
+</div>
+   <!-- <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
     <td> <a href="detailoverzicht.php"><button name="detailoverzicht" value="detailoverzicht" type="submit">Detailoverzicht</button> </a></td>
   </tr>
 </table>
-    </div>
+    </div> -->
  </main>
 
   <?php
