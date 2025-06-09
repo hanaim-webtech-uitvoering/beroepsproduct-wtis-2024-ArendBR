@@ -28,12 +28,11 @@
        <form action="functions/createlogin.php" method="POST"> 
         <div>
           <label><b>Gebruikersnaam:</b></label>
-          <input name="naam" type="text" placeholder="Enter Username" name="naam" required />
+          <input name="username" type="text" placeholder="Enter Username" required />
           </div>
           <div>
             <label><b>Wachtwoord:</b></label>
-            <input name="wachtwoord"  type="password" placeholder="Enter Password" name="wachtwoord"
-              required />
+            <input name="password"  type="password" placeholder="Enter Password" required />
           </div>
           <div>
          <!--  <a href="profiel.php"> --> <button name="inloggen" value="inloggen" type="submit">Log in</button> <!-- </a> -->
