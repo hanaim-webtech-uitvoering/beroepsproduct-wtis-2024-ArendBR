@@ -1,6 +1,6 @@
 <?php
 
-require '../applicatie/db_connectie.php';
+require '../db_connectie.php';
 
 
 if (isset($_POST['inloggen'])) {
