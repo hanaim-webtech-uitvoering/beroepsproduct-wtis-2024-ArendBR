@@ -1,13 +1,13 @@
 <?php
 session_start();
-$_SESSION["naam"] = "Arend";
-// $naam = $_SESSION['naam'];
-// require_once 'db_connectie.php';
+$_SESSION["username"] = "Arend";
+ $username = $_SESSION['username'];
+ require_once 'db_connectie.php';
 
 function createHeader()
 {
 
-  if (isset($_SESSION['naam'])) {
+  if (isset($_SESSION['username'])) {
     echo '    
     <nav class="topnav">
     <ul class="flex-menu">
@@ -38,23 +38,23 @@ function createHeader()
   </li>
 </ul>
 </nav>';
-  } else {
+  } */ else {
     echo '
   <nav class="topnav">
   <ul class="flex-menu">
     <li>
-      <a href="startpagina.php" class="logo">
-        <img src="afbeeldingen/AirportLogo.png" alt="" />
+      <a href="index.php" class="logo">
+        <img src="afbeeldingen/Pizzalogo.png" alt="" />
       </a>
     </li>
   <li>
-    <a href="login.php" class="button">Login</a>
+    <a href="loginregistratie.php" class="button">Login</a>
   </li>
 </ul>
 </nav>';
   }
   ;
-*/
+
 }
 
 ?>

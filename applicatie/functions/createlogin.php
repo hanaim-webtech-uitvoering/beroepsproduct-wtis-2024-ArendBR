@@ -1,6 +1,7 @@
 <?php
 
-require '../db_connectie.php';
+   require "../db_connectie.php"; 
+ /* require "db_connectietest.php";  */
 
 
 if (isset($_POST['inloggen'])) {
