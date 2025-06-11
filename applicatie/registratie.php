@@ -1,7 +1,7 @@
 <?php
  require_once "header.php";
  require_once "sidebar.php";
- require_once "functions/createlogin.php";
+ require_once "functions/createregistratie.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>login</title>
+  <title>registratie</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     ?>
     <div class="containermain">
 
-       <form action="functions/createlogin.php" method="POST"> 
+       <form action="functions/createregistratie.php" method="POST"> 
         <div>
           <label><b>Gebruikersnaam:</b></label>
           <input name="username" type="text" placeholder="Enter username" required />
@@ -36,10 +36,10 @@
           </div>
           <div>
             <label><b>Adres:</b></label>
-            <input name="adres"  type="text" placeholder="Enter adress" required />
+            <input name="address"  type="text" placeholder="Enter adress" required />
           </div>
           <div>
-            <button name="Registratie" value="registratie" type="submit">registratie</button>
+            <button name="registratie" value="registratie" type="submit">registratie</button>
           </div>
    </form> 
  </main>

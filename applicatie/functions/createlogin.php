@@ -1,11 +1,11 @@
 <?php
-  // require_once "./db_connectie.php"; 
+   
 
 if (isset($_POST['inloggen'])) {
-echo "Inloggen gelukt"; }
-  /*  $username = htmlspecialchars($_POST['username']) ;
+// echo "Inloggen gelukt"; }
+    $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
-
+ require_once "./db_connectie.php";
     $db = maakVerbinding(); 
 
     $sql = "SELECT username, password
@@ -27,5 +27,5 @@ echo "Inloggen gelukt"; }
         echo "wachtwoord of gebruikersnaam is onjuist";
         header("Location: ../loginregistratie.php");
 }
-    } */
+    } 
 ?>
