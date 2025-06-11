@@ -41,7 +41,6 @@
           <div>
            <a href="registratie.php"> <button name="Registratie" value="registratie" type="submit">registratie</button> </a>
           </div>
-      </form>
  </main>
 
   <footer></footer>
