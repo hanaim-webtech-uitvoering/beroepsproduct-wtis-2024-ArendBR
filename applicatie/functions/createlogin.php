@@ -1,8 +1,9 @@
 <?php
-  require_once "./db_connectie.php"; 
+  // require_once "./db_connectie.php"; 
 
 if (isset($_POST['inloggen'])) {
-    $username = htmlspecialchars($_POST['username']) ;
+echo "Inloggen gelukt"; }
+  /*  $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
 
     $db = maakVerbinding(); 
@@ -26,5 +27,5 @@ if (isset($_POST['inloggen'])) {
         echo "wachtwoord of gebruikersnaam is onjuist";
         header("Location: ../loginregistratie.php");
 }
-    } 
+    } */
 ?>
