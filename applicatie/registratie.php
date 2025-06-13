@@ -39,6 +39,18 @@
             <input name="address"  type="text" placeholder="Enter adress" required />
           </div>
           <div>
+            <label><b>Voornaam:</b></label>
+            <input name="first_name"  type="text" placeholder="Enter first name" required />
+          </div>
+          <div>
+            <label><b>Achternaam:</b></label>
+            <input name="last_name"  type="text" placeholder="Enter last name" required />
+          </div>
+          <div>
+            <label><b>Rol:</b></label>
+            <input name="role"  type="text" value="Client" readonly />
+          </div>
+          <div>
             <button name="registratie" value="registratie" type="submit">registratie</button>
           </div>
    </form> 

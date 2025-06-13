@@ -1,34 +1,26 @@
 <?php
-  // require_once "./db_connectie.php"; 
-
 if (isset($_POST['registratie'])) {
-// echo "registratie voltooid"; }
-    $username = htmlspecialchars($_POST['username']) ;
-    $password = htmlspecialchars($_POST['password']) ;
-    $address = htmlspecialchars($_POST['address']) ;
-    // require_once "./db_connectie.php";
-    require_once "db_connectie.php";
+     require_once "../db_connectie.php";
     $db = maakVerbinding(); 
-
-    $sql = "INSERT INTO User1 (username, password, address) 
-    VALUES (?, ?, ?)";
+    $sql = "INSERT INTO User1 (username, password, address, first_name, last_name, role) 
+    VALUES (?, ?, ?, ?, ?, ?)";
     $query = $db->prepare($sql);
-    $query -> bindparam('username',$username);
-    $query -> bindparam('password',$password);
-    $query -> bindparam('address',$address);
-    $query->execute();
-    $resultaat = $query->fetchAll();
 
-    if (isset($resultaat[0]['username']) && (isset($resultaat[0]['password']) && (isset($address[0]['address'])))) {
-        session_start();
-        $_SESSION["username"] = $username;
-        $_SESSION['password'] = $resultaat[0]['password'];
-        $_SESSION['address'] = $address;
+    $query->execute(
+        [ 
+            htmlspecialchars($_POST['username']),
+            password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT),
+            htmlspecialchars($_POST['address']),
+            htmlspecialchars($_POST['first_name']),
+            htmlspecialchars($_POST['last_name']),
+            htmlspecialchars($_POST['role'])
+    ]
+    );
+    $resultaat = $query;
+   
+   session_start();
+   $_SESSION["username"] = $_POST["username"];
         $message = "Geregistreerd.";
         header("Location: ../index.php?username=$username");
-    } else {
-        echo "Registratie mislukt";
-        header("Location: ../registratie.php");
-}
     } 
 ?>
