@@ -1,7 +1,7 @@
 <?php
-function createSidebar()
- // {
- /* if (isset($_SESSION['naam']))  */{
+ require_once 'db_connectie.php';
+function createSidebar() {
+  if (isset($_SESSION['username']))  {
     echo '
 <div class="nav-left" id="sidebar">
       <ul>
@@ -12,32 +12,11 @@ function createSidebar()
         </li>
 
         <li class="knop">
-        <a href="loginregistratie.php">profiel</a>
+        <a href="profiel.php">profiel</a>
       </li>
       </ul>
     </div>
 ';
-  } /* elseif (isset($_SESSION['balienummer'])) {
-    echo '
-      <div class="nav-left" id="sidebar">
-            <ul>
-              <li class="knop"><a href="index.php">Home</a></li>
-
-              <li class="knop">
-              <a href="winkelmand.php">winkelmand</a>
-            </li>
-
-              <li class="knop">
-                <a href="menu.php">menu</a>
-              </li>
-      
-              <li class="knop">
-                <a href="passagierInformatie.php">passagiersinformatie</a>
-              </li>
-      
-            </ul>
-          </div>
-      ';
   } else {
     echo '
     <div class="nav-left" id="sidebar">
@@ -51,7 +30,7 @@ function createSidebar()
 </div>
       ';
   } 
-} */
+} 
 
 
 function createFooter() {
