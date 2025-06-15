@@ -2,6 +2,7 @@
  require_once "header.php";
  require_once "functions/createmenu.php";
  require_once "sidebar.php";
+ require_once "functions/createwinkelmand.php"; 
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +27,11 @@
  
     <div class="content-right">
       <h1 class="menu">Menu.</h1>
-      <form action="menu.php" method="GET">
+       <form action="functions/toevoegenwinkelmand.php" method="POST"> 
         <label for="zoek">zoeken:</label><br/>
         <input type="text" placeholder="menu" id="zoek" name="zoek"/>
         <input type="submit"/><br/>
+ <a href="winkelmand.php"><img src="winkelmand.jpg" alt="winkelmand" width="50" height="60"></a>
         <div class=outer-wrapper>
           <div class=table-wrapper>
             <table>
@@ -37,20 +39,16 @@
               <th>Prijs</th>
               <th>Producttype</th>
               <th>Toevoegen aan winkelmand</th>
-  
+              
               <?php
               createmenuoverzicht();
               ?>
-
             </table>
           </div>
         </div>
       </form>
     </div>
-    <a href="winkelmand.php"><img src="winkelmand.jpg" alt="winkelmand" width="50" height="60"></a>
-      <?php
-     //         createmenu();
-              ?>
+
   </main>
 
 <?php

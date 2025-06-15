@@ -27,6 +27,9 @@
 
        <form action="functions/createregistratie.php" method="POST"> 
         <div>
+          <h1> Login </h1>
+        </div>
+        <div>
           <label><b>Gebruikersnaam:</b></label>
           <input name="username" type="text" placeholder="Enter username" required />
           </div>

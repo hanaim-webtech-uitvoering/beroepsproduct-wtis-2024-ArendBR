@@ -1,6 +1,6 @@
 <?php
-require_once "db_connectie.php";
-require_once "createmenu.php";
+//require_once "../db_connectie.php";
+// require_once "createmenu.php";
 
 function createwinkelmand() {
     $db = maakverbinding();
@@ -22,16 +22,19 @@ function createwinkelmand() {
 
     foreach ($results as $result ) {
 
-        echo "
 
-       <tr>
-       <td>" . $result["username"] . " </td>
-       <td>" . $result["address"] . " </td>
-        <td>" . $result["name"] . " </td>
-        <td>" . $result["price"] . "</td>
-        <td>" . $result["type_id"] . "</td>
-      </tr>
-    ";
+        echo" <tr>";
+        echo" <td>" . $result["name"] . "</td>";
+        echo" <td>" . $result["price"] . "</td>";
+        echo" <td>" . $result["type_id"] . "</td>";
+        echo" <td>";
+        echo "<input type='submit' name='verwijderen' value='verwijderen'>";
+        echo" </td>";     
+        echo" <td>";
+        echo "<input type='submit' name='aanpassen' value='aanpassen'>";
+        echo" </td>";
+        echo" </tr>";
     } 
 }
+//}
 ?>

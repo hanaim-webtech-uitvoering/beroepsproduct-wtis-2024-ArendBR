@@ -1,28 +1,31 @@
 <?php
    
-
 if (isset($_POST['inloggen'])) {
-// echo "Inloggen gelukt"; }
     $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
+    $hash = password_hash(($_POST['password']), PASSWORD_DEFAULT);
  require_once "../db_connectie.php";
     $db = maakVerbinding(); 
 
     $sql = "SELECT username, password
         from User1
         where username = :username and password = :password";
+ 
     $query = $db->prepare($sql);
-    $query->execute();
-    $resultaat = $query->fetchAll();
+    $query->execute(
+        [
+            htmlspecialchars($_POST['username']),
+            password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT)
+        ]
+    );
 
-    if (isset($resultaat[0]['username']) && (isset($resultaat[0]['password']))) {
-        session_start();
-        $_SESSION["username"] = $_POST["username"];
-        $message = "ingelogd";
-        header("Location: ../index.php?username=$username");
+if (password_verify(($_POST['username']), $hash)) {
+   echo 'password is valid';
+     session_start();
+   $_SESSION["username"] = $_POST["username"];
+        header("Location: ../index.php");
     } else {
-        echo "wachtwoord of gebruikersnaam is onjuist";
-        header("Location: ../loginregistratie.php");
+        header("Location: ../loginregistratie.php?msg");
 }
     } 
 ?>

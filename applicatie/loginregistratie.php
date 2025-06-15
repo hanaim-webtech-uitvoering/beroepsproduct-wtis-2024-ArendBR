@@ -19,14 +19,24 @@
 
     <?php
     createHeader();
-    ?>
-    <?php
      createSidebar();
     ?>
     <div class="containermain">
 
        <form action="functions/createlogin.php" method="POST"> 
         <div>
+        <h1> Login </h1>
+        </div>
+        <div>
+          <?php
+           if(isset($_GET['msg']))
+    {
+        $message = "Wachtwoord of gebruiksnaam onjuist";
+        echo $message;
+    }
+          ?>
+          </div>
+          <div>
           <label><b>Gebruikersnaam:</b></label>
           <input name="username" type="text" placeholder="Enter Username" required />
           </div>

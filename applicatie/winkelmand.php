@@ -26,11 +26,11 @@
     <div class="outer-wrapper" >
       <div class="table-wrapper">
       <table>
-    <th>naam</th>
-    <th>Adres</th>
     <th>product</th>
     <th>prijs</th>
     <th>type product </th>
+    <th>verwijderen uit winkelmand </th>
+    <th>ingredienten aanpassen </th>
 
 
 <?php

@@ -18,9 +18,6 @@ function createHeader()
         <a href="bestellingoverzicht.php" class="button">bestellingoverzicht</a>
       </li>  
       <li>                  
-    <a href="profiel.php" class="button">profiel</a>
-    </li> 
-      <li>                  
     <a href="uitloggen.php" class="button">Uitloggen</a>
     </li>
   </ul>

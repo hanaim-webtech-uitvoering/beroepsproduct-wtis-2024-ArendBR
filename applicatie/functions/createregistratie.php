@@ -16,11 +16,10 @@ if (isset($_POST['registratie'])) {
             htmlspecialchars($_POST['role'])
     ]
     );
-    $resultaat = $query;
    
    session_start();
    $_SESSION["username"] = $_POST["username"];
         $message = "Geregistreerd.";
-        header("Location: ../index.php?username=$username");
+        header("Location: ../index.php");
     } 
 ?>
