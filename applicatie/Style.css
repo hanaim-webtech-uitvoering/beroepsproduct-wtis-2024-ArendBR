@@ -3,6 +3,9 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+h1 {
+  text-align: center
+}
 .button {
   padding: 5px 10px;
   background-color: white;

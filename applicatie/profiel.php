@@ -1,7 +1,7 @@
 <?php
-//session_start();
  require_once "header.php";
  require_once "sidebar.php";
+ require_once "functions/createbestellinglijst.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,16 +19,23 @@
 
     <?php
     createHeader();
+    createSidebar();
     ?>
-    <?php
-     createSidebar();
-     echo('profiel');
-     echo $_SESSION["username"];
-    ?>
+<table>
+<th>Username</th>
+<th>Adres</th>
+<th>datum</th>
+<th>Status</th>
+<th>Product</th>
+<th>Prijs</th>
+<th>Producttype</th>
 
+    <?php
+     createbestellinglijst();
+    ?>
+</table>
   
 
-      </form>
   </main>
 
   <?php 

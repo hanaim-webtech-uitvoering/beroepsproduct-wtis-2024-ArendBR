@@ -25,18 +25,23 @@
     ?>
    <div class="outer-wrapper" >
       <div class="table-wrapper">
+        <form>
       <table>
     <th>naam</th>
-    <th>Adres</th>
+    <th>adres</th>
+    <th>datetime</th>
+    <th>status</th>
     <th>product</th>
     <th>prijs</th>
     <th>type product </th>
+    <th>aanpassen status </th>
 
 
 <?php
 createbestellingoverzicht();
 ?>
 </table>
+</form>
     </div>
 </div>
    <!-- <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
