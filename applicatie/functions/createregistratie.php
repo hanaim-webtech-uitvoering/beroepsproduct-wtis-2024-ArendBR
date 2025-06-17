@@ -19,6 +19,8 @@ if (isset($_POST['registratie'])) {
    
    session_start();
    $_SESSION["username"] = $_POST["username"];
+   $_SESSION["role"] = $_POST["role"];
+    
         $message = "Geregistreerd.";
         header("Location: ../index.php");
     } 
