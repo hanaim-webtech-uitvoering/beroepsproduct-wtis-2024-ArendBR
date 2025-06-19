@@ -13,12 +13,21 @@ $price = $_POST['price'];
             WHERE name = '$product';";
     $query = $db->prepare($sql);
 
-    if (mysqli_num_rows($query) > 0) {
-      $message[] = 'Product staat al in de winkelmand';
-    } else {
-      $sql = "INSERT INTO 
-              VALUES "
-    }
+    if ($quantity > 0) {
+    //if (mysqli_num_rows($query) > 0) {
+   //   $message[] = 'Product staat al in de winkelmand';
+   // } else {
+      $sql2 = "SELECT max(order_id)
+                FROM Pizza_Order_Product;";
+      $query2 = $db->prepare($sql2);
+      $results = $query2->fetchAll(PDO::FETCH_ASSOC);
+      $order_id = $results;
+      $order_id;
+
+
+      $sql = "INSERT INTO Pizza_Order_Product
+              VALUES ($order_id, $product, $quantity);";
+     $query = $db->prepare($sql);
     }
    // echo $query;
     //$row = $query -> fetch_assoc();
