@@ -36,13 +36,16 @@
           <div class=table-wrapper>
             <table>
               <th>Gerecht</th>
-              <th>Prijs</th>
               <th>Producttype</th>
+              <th>Aantal</th>
+              <th>Prijs</th>
               <th>Toevoegen aan winkelmand</th>
-              
               <?php
               createmenuoverzicht();
               ?>
+               <input type='hidden' name='name' value='<?php $result["name"]; ?>'>
+               <input type='hidden' name='type_id' value='<?php $result["type_id"]; ?>'>
+               <input type='hidden' name='price' value='<?php $result["price"]; ?>'>
             </table>
           </div>
         </div>
