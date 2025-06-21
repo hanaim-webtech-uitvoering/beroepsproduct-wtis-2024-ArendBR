@@ -46,7 +46,7 @@
               ?>
               <!-- <input type='hidden' name='name' value='<?php// require_once "functions/toevoegenwinkelmand.php"; $result["name"];  ?>'> -->
 
-               <input type='hidden' name='name' value='<?php $product ?>'>
+                <td> <input type='text' name='name' value='<?php $product ?>'> </td> 
                <input type='hidden' name='type_id' value='<?php $producttype ?>'>
                <input type='hidden' name='price' value='<?php $price ?>'>
 
