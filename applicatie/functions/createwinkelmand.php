@@ -39,6 +39,8 @@ require_once "toevoegenwinkelmand.php";
 //} */
 
  function createwinkelmand() {
+    $product = $_SESSION["product"];
+    echo "$product";
  //  $product = $_POST['name'];
 //$producttype = $_POST['type_id'];
 //$quantity = $_POST['quantity'];
@@ -47,7 +49,7 @@ require_once "toevoegenwinkelmand.php";
     $sql = "SELECT name, type_id, Pizza_Order_Product.quantity, price
             FROM Product
             INNER JOIN Pizza_Order_Product ON Product.name = Pizza_Order_Product.product_name;";
-      //      WHERE name = '$product';";
+     //       WHERE name = '$product';";
     $query = $db->prepare($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
     
@@ -62,7 +64,7 @@ require_once "toevoegenwinkelmand.php";
         echo" <td>" . $result["type_id"] . "</td>";
         echo" <td>" . $result["quantity"] . "</td>";
         echo" <td>" . $result["price"] . "</td>";
-       // echo" <td>" . $product . "</td>";
+    //    echo "$product";
         echo" <td>";
         echo "<input type='submit' name='verwijderen' value='verwijderen'>";
         echo" </td>";     

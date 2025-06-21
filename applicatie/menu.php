@@ -3,6 +3,7 @@
  require_once "functions/createmenu.php";
  require_once "sidebar.php";
  require_once "functions/createwinkelmand.php"; 
+ require_once "functions/toevoegenwinkelmand.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,9 +44,15 @@
               <?php
               createmenuoverzicht();
               ?>
-               <input type='hidden' name='name' value='<?php $result["name"]; ?>'>
-               <input type='hidden' name='type_id' value='<?php $result["type_id"]; ?>'>
-               <input type='hidden' name='price' value='<?php $result["price"]; ?>'>
+              <!-- <input type='hidden' name='name' value='<?php// require_once "functions/toevoegenwinkelmand.php"; $result["name"];  ?>'> -->
+
+               <input type='hidden' name='name' value='<?php $product ?>'>
+               <input type='hidden' name='type_id' value='<?php $producttype ?>'>
+               <input type='hidden' name='price' value='<?php $price ?>'>
+
+              <!-- <input type='hidden' name='name' value='<?php //$result["name"]; ?>'>
+               <input type='hidden' name='type_id' value='<?php //$result["type_id"]; ?>'>
+               <input type='hidden' name='price' value='<?php //$result["price"]; ?>'> -->
             </table>
           </div>
         </div>

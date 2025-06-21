@@ -36,10 +36,6 @@ function createmenuoverzicht() {
 
       echo '<tr>';  
         echo' <td>' . $result["name"] . '</td>';
-      //  echo' <td>';
-     //   echo "<input type='hidden' name='name' value='$result["name"]'>";
-      //  echo' </td>';
-
         echo" <td>" . $result["type_id"] .  "</td>";
         echo" <td>";
         echo "<input type='number' min='1'  name='quantity' value=1>";

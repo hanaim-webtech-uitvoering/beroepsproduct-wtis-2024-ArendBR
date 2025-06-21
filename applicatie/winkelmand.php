@@ -2,6 +2,7 @@
  require_once "header.php";
  require_once "sidebar.php";
  require_once "functions/createwinkelmand.php";
+ require_once "functions/toevoegenwinkelmand.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +33,10 @@
     <th>verwijderen uit winkelmand </th>
     <th>ingredienten aanpassen </th>
 
-
 <?php
-createwinkelmand();
+//createwinkelmand();
+//echo " $product";
+echo " <td>" . $_SESSION["product"] . "</td> ";
 ?>
 </table>
     </div>
