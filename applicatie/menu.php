@@ -1,6 +1,6 @@
 <?php
  require_once "header.php";
- require_once "functions/createmenu.php";
+ //require_once "functions/createmenu.php";
  require_once "sidebar.php";
  require_once "functions/createwinkelmand.php"; 
  require_once "functions/toevoegenwinkelmand.php";
@@ -41,13 +41,19 @@
               <th>Aantal</th>
               <th>Prijs</th>
               <th>Toevoegen aan winkelmand</th>
+
+             
               <?php
               createmenuoverzicht();
               ?>
+          <!--     <div class="producttype">
+           <td> <?php// $results["type_id"] ?>  </td> 
+             <td> <?php //$_SESSION["type_id"] ?>  </td> 
+              </div> -->
               <!-- <input type='hidden' name='name' value='<?php// require_once "functions/toevoegenwinkelmand.php"; $result["name"];  ?>'> -->
 
-                <td> <input type='text' name='name' value='<?php $product ?>'> </td> 
-               <input type='hidden' name='type_id' value='<?php $producttype ?>'>
+                <td> <input type='hidden' name='name' value='<?php $product ?>'> </td> 
+               <input type='hidden' name='type_id' value='<?php $result["type_id"] ?>'>
                <input type='hidden' name='price' value='<?php $price ?>'>
 
               <!-- <input type='hidden' name='name' value='<?php //$result["name"]; ?>'>

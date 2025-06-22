@@ -5,7 +5,9 @@ if (isset($_POST["toevoegen"])) {
 require_once "../db_connectie.php";
 //$product = $_POST['name'];
 //$product = $_SESSION["product"];
+//session_start();
 $product = $_POST['product'];
+
 $producttype = $_POST['type_id'];
 $quantity = $_POST['quantity'];
 $price = $_POST['price'];
