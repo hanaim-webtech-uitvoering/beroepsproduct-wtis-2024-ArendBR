@@ -12,7 +12,7 @@ function createmenuoverzicht() {
   
     $query = $db->query($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
-    $_SESSION["type_id"] = $results["type_id"];
+   // $_SESSION["type_id"] = $results["type_id"];
     }
 
     else if(isset($_GET['zoek'])){
