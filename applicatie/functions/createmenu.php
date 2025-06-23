@@ -37,7 +37,7 @@ function createmenuoverzicht() {
 //$readonly = (strlen(trim($result["name"])) == 0) ? null : 'readonly';
 
       echo '<tr>';  
-        echo' <td>' . $result["name"] . '</td>';
+     //   echo' <td>' . $result["name"] . '</td>';
         echo" <td>";
         echo "<input type='text' name='product' value= ". $result["name"] .">";
         echo" </td>";
@@ -50,13 +50,11 @@ function createmenuoverzicht() {
     echo "<input type='submit' name='toevoegen' value=toevoegen>";
      echo" </td>";
      echo"</tr> ";
-  //    session_start();
- //   $_SESSION["product"] = $result["name"];
- //   $_SESSION["type_id"] = $result["type_id"];
- //   $_SESSION["price"] = $result["price"];
+   $_SESSION["product"] = $result["name"];
+    $_SESSION["type_id"] = $result["type_id"];
+    $_SESSION["price"] = $result["price"];
 //}
     } 
-   // session_start();
    // $_SESSION["product"] = $results["name"];
    // $_SESSION["type_id"] = $results["type_id"];
   //  $_SESSION["price"] = $results["price"];

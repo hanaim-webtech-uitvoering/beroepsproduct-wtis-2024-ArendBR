@@ -1,6 +1,6 @@
 <?php
  require_once "header.php";
- //require_once "functions/createmenu.php";
+ require_once "functions/createmenu.php";
  require_once "sidebar.php";
  require_once "db_connectie.php";
  //require_once "functions/createwinkelmand.php"; 
@@ -36,12 +36,11 @@
    $query = $db -> query($sql);
    // $results = $query->fetchAll(PDO::FETCH_ASSOC);
    $results = $query->fetchAll(PDO::FETCH_ASSOC);
-   vardump($results);
    //if (isset($results)) {
    //  echo "$results[]";
   //}  else{
     
-    echo "geen resultaat";
+  //  echo "geen resultaat";
    // }
     //$query -> execute();
    //echo $query["price"]; 
@@ -66,16 +65,16 @@
               <th>Aantal</th>
               <th>Prijs</th>
               <th>Toevoegen aan winkelmand</th>
-
-              <tr>  
-                <td> <?php echo $results['price']; ?> </td>
-              <td> <input type='text' name='product' value='<?php $results["name"] ?>'> </td>
-                <td> <input type='text' name='producttype' value='<?php $results["type_id"] ?>'> </td>
-                <td> <input type='number' min='1'  name='quantity' value=1> </td>
-                <td> <input type='text' name='price' value='<?php $results["price"] ?>'> </td>
-                <td> <input type='submit' name='toevoegen' value=toevoegen> </td>
-              </tr>
+<?php createmenuoverzicht(); ?>
             
+<tr>  
+             <td> <input type='text' name='product' value='<?php $_SESSION["product"] ?>' readonly> </td>
+    <!--             <td> <input type='text' name='producttype' value='<?php// $results["type_id"] ?>'> </td> -->
+                <td> <input type='number' min='1'  name='quantity' value=1> </td>
+        <!--        <td> <input type='text' name='price' value='<?php //$results["price"] ?>'> </td> 
+                <td> <input type='submit' name='toevoegen' value=toevoegen> </td> -->
+              </tr>
+
             </table>
           </div>
         </div>
