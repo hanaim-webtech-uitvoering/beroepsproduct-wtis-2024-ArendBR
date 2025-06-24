@@ -25,19 +25,13 @@
     <div class="detailoverzicht" >
       <table>
   <tr>
-    <td>Klant</td>
-    <td>Adres</td>
-    <td>Bestelling</td>
+    <th>Product</th>
+    <th>Ingredient</th>
   </tr>
   <tr>
-    <td>Arend</td>
-    <td>Langelaan 10</td>
-    <td>Pizza Salami
-        Kaas
-        Tomaat
-        Salami
-        Zonder ui
-    </td>
+    <?php  
+    createDetailoverzicht();
+    ?>
   </tr>
 </table>
     </div>

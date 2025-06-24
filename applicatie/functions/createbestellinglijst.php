@@ -10,8 +10,9 @@ function createbestellinglijst() {
 	ORDER BY datetime;
     "
     ;
-    
+     // WHERE username = '$user'
     $stmt = $db->query($sql);
+    $stmt->execute([$user]); 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($results as $result ) {

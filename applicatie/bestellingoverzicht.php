@@ -35,7 +35,7 @@
     <th>prijs</th>
     <th>type product </th>
     <th>aanpassen status </th>
-
+    <th>detailoverzicht </th>
 
 <?php
 createbestellingoverzicht();

@@ -27,7 +27,10 @@ function createbestellingoverzicht() {
     echo "    <td>" . $result["price"] . "</td>";
     echo "    <td>" . $result["type_id"] . "</td>";
      echo" <td>";
-     echo "<input type='submit' name='status aanpassen' value=status aanpassen>";
+     echo "<input type='submit' name='statusaanpassen' value=status aanpassen>";
+     echo" </td>";
+     echo" <td>";
+     echo "<input type='submit' name='detailoverzicht' value=detailoverzicht>";
      echo" </td>";
      echo" </tr>";
     } 
