@@ -1,11 +1,10 @@
 <?php
 session_start();
  require_once 'db_connectie.php';
-// require_once 'functions/createregistratie.php';
 function createHeader()
 {
-
-  if (isset($_SESSION['username'])) {
+     if (isset($_SESSION['username'])) {
+//   if (isset($_SESSION['username']) && ($_SESSION["role"] == 'personnel')) {
     echo '    
     <nav class="topnav">
     <ul class="flex-menu">
@@ -15,7 +14,22 @@ function createHeader()
         </a>
       </li>  
       <li>
+      <li>
         <a href="bestellingoverzicht.php" class="button">bestellingoverzicht</a>
+      </li>  
+      <li>                  
+    <a href="uitloggen.php" class="button">Uitloggen</a>
+    </li>
+  </ul>
+  </nav>';
+  } elseif (isset($_SESSION['username'])) {
+    echo '    
+    <nav class="topnav">
+    <ul class="flex-menu">
+      <li>
+        <a href="index.php" class="logo">
+          <img src="Pizzalogo.png" alt="" class="logo"/>
+        </a>
       </li>  
       <li>                  
     <a href="uitloggen.php" class="button">Uitloggen</a>

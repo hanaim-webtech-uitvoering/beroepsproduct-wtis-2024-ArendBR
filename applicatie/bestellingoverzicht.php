@@ -25,7 +25,7 @@
     ?>
    <div class="outer-wrapper" >
       <div class="table-wrapper">
-        <form>
+        <form action="functions/statusaanpassen.php" method = "$_GET">
       <table>
     <th>naam</th>
     <th>adres</th>
@@ -44,11 +44,7 @@ createbestellingoverzicht();
 </form>
     </div>
 </div>
-   <!-- <td><button name="wijzigen" value="wijzigen" type="submit">Status wijzigen</button></td>
-    <td> <a href="detailoverzicht.php"><button name="detailoverzicht" value="detailoverzicht" type="submit">Detailoverzicht</button> </a></td>
-  </tr>
-</table>
-    </div> -->
+ 
  </main>
 
   <?php

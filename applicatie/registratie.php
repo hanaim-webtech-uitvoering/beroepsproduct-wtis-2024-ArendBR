@@ -51,7 +51,7 @@
           </div>
           <div>
             <label><b>Rol:</b></label>
-            <input name="role"  type="text" value="Client" readonly />
+           <input name="role"  type="text" value="Client" readonly />
           </div>
           <div>
             <button name="registratie" value="registratie" type="submit">registratie</button>

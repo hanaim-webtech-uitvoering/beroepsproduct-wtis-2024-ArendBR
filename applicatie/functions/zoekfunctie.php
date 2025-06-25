@@ -1,7 +1,6 @@
 <?php
 
 function zoekFunctie() {
-    //require_once "../db_connectie.php";
     $db = maakverbinding();
     if(empty($_GET['zoek'])|| !isset($_GET['zoek'])) {
     $sql = "SELECT name, type_id, Pizza_Order_Product.quantity, price
@@ -12,7 +11,6 @@ function zoekFunctie() {
   
     $query = $db->query($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
-   // $_SESSION["type_id"] = $results["type_id"];
     }
 
     else if(isset($_GET['zoek'])){

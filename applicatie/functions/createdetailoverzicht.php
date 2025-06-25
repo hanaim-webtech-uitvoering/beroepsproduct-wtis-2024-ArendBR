@@ -8,9 +8,9 @@ if (isset($_POST["detailoverzicht"])) {
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
     
 
-  //  if (!$results) {
-  //      die('Invalid query' . $db->error);
-    //}
+    if (!$results) {
+        die('Invalid query' . $db->error);
+    }
 
     foreach ($results as $result ) {
         echo" <tr>";
