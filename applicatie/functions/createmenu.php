@@ -15,13 +15,15 @@ function createmenuoverzicht() {
     }
   if (isset($_SESSION['username'])) { 
     foreach ($results as $result ) {
-
     echo" 
 <tr>  
 <td>" . $result["name"] . "</td>
 <td>" . $result["type_id"] . "</td>
 <td>" . $result["price"] . "</td>
-<td> <input type='submit' name='toevoegen' value=toevoegen> </td>
+<td> <input type='submit' name='toevoegen' value='toevoegen'> </td>
+<td> <input type='hidden' name='product' value=". $result["name"] . "> </td>
+<td> <input type='hidden' name='producttype' value=". $result["type_id"] ."> </td>
+<td> <input type='hidden' name='prijs' value=" . $result["price"] ."> </td>
 </tr> "; 
     }
   } else {

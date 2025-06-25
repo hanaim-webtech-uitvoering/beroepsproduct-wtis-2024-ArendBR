@@ -1,16 +1,31 @@
 <?php  
-require_once "createmenu.php";
-
-if (isset($_POST["toevoegen"])) {
-require_once "../db_connectie.php";
+function toevoegenwinkelmand() {
+//if (isset($_POST["toevoegen"])) {
+//require_once "../db_connectie.php";
 //$product = $_POST['name'];
 //$product = $_SESSION["product"];
 //session_start();
 $product = $_POST['product'];
-$producttype = $_POST['type_id'];
-$quantity = $_POST['quantity'];
-$price = $_POST['price'];
-echo " $product, $producttype, $quantity, $price ";
+$producttype = $_POST['producttype'];
+$prijs = $_POST['prijs'];
+echo " $product, $producttype, $prijs ";
+
+echo"
+<tr>
+<td>" . $product . "</td>
+<td>" . $producttype . "</td>
+<td> <input type='number' min='1' name='aantal' value='1'> </td>
+<td>" . $prijs ."</td>
+</tr> ";
+//if ((!empty($product)) && (!empty($producttype)) &&  (!empty($prijs))) {
+//header("Location: ../menu.php");
+//} else {
+//      echo "Toevoegen aan winkelmand mislukt";
+//        header("Location: ../menu.php");  
+
+//}
+//}
+
   /*  $db = maakVerbinding(); 
   //  $sql = "SELECT name, type_id, Pizza_Order_Product.quantity, price
  //           FROM Product

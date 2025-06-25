@@ -4,7 +4,7 @@
  require_once "sidebar.php";
  require_once "db_connectie.php";
  //require_once "functions/createwinkelmand.php"; 
- //require_once "functions/toevoegenwinkelmand.php";
+ require_once "functions/toevoegenwinkelmand.php";
  require_once "functions/zoekfunctie.php";
 ?>
 
@@ -49,7 +49,7 @@
             <th>  Producttype </th>
              <th> Aantal </th>
               <th> prijs </th> 
-              <?php ?>
+              <?php if (isset($_POST["toevoegen"])) { toevoegenwinkelmand(); } ?>
 </table>
 </div>
 </div>
