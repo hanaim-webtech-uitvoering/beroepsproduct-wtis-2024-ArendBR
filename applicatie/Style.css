@@ -192,3 +192,31 @@ footer {
 .detailoverzicht {
     margin: 3% 5% 5% 15%;
 }
+
+.betaal-container {
+    background: #fff;
+    max-width: 400px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 5%;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+.betaal-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+}

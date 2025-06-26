@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST["verwijderen"])) {
-    
+function verwijderenwinkelmand() {
+  unset($_POST['product'], $_POST['producttype'], $_POST['aantal'], $_POST['prijs']);  
 }
+
 ?>

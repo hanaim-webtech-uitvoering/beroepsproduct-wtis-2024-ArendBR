@@ -19,6 +19,7 @@ function createmenuoverzicht() {
 <tr>  
 <td>" . $result["name"] . "</td>
 <td>" . $result["type_id"] . "</td>
+<td> <input type='number' min='1' name='aantal' value='1'> </td>
 <td>" . $result["price"] . "</td>
 <td> <input type='submit' name='toevoegen' value='toevoegen'> </td>
 <td> <input type='hidden' name='product' value=". $result["name"] . "> </td>
@@ -27,7 +28,7 @@ function createmenuoverzicht() {
 </tr> "; 
     }
   } else {
-    echo" <h1> Inloggen voor bestelling </h1>";
+    echo" <h1> Inloggen voor bestelling is verplicht</h1>";
   foreach ($results as $result ) {
 
     echo" 

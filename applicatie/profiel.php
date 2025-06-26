@@ -1,6 +1,6 @@
 <?php
- require_once "header.php";
- require_once "sidebar.php";
+ require_once "functions/header.php";
+ require_once "functions/sidebar.php";
  require_once "functions/createbestellinglijst.php";
 ?>
 
@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Airport</title>
+  <title>Profiel</title>
 </head>
 
 <body>

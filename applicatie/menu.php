@@ -1,11 +1,11 @@
 <?php
- require_once "header.php";
+ require_once "functions/header.php";
  require_once "functions/createmenu.php";
- require_once "sidebar.php";
- require_once "db_connectie.php";
- //require_once "functions/createwinkelmand.php"; 
+ require_once "functions/sidebar.php";
+ require_once "db_connectie.php"; 
  require_once "functions/toevoegenwinkelmand.php";
- require_once "functions/zoekfunctie.php";
+ require_once "functions/updatewinkelmand.php";
+ require_once "functions/verwijderenwinkelmand.php";
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +33,7 @@
            <table>
               <th>Gerecht</th>
               <th>Producttype</th>
+              <th>Aantal </th>
               <th>Prijs</th>
               <th>Toevoegen aan winkelmand</th> 
 <?php createmenuoverzicht(); ?>
@@ -41,7 +42,7 @@
         </div>
       </form>
       <h1> Winkelmand </h1>
- <form action="" method ="GET">
+ <form action="" method ="POST">
  <div class=outer-wrapper>
           <div class=table-wrapper>
             <table>
@@ -49,8 +50,14 @@
             <th>  Producttype </th>
              <th> Aantal </th>
               <th> prijs </th> 
-              <?php if (isset($_POST["toevoegen"])) { toevoegenwinkelmand(); } ?>
+              <th> verwijderen uit winkelmand </th>
+              <?php if (isset($_POST["toevoegen"])) { toevoegenwinkelmand(); } 
+                    if (isset($_POST["update"])) { updatewinkelmand(); }  
+                    if (isset($_POST["verwijderen"])) {verwijderenwinkelmand(); }
+                    ?>
+
 </table>
+
 </div>
 </div>
     </div>
@@ -61,4 +68,3 @@
   ?>
 </body>
 </html>
-   <?php
