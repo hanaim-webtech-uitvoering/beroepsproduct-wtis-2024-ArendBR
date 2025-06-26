@@ -1,6 +1,8 @@
 <?php
  require_once "functions/header.php";
  require_once "functions/sidebar.php";
+ require_once "db_connectie.php";
+ require_once "functions/createdetailoverzicht.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +17,8 @@
 
 <body>
   <main>
-
     <?php
     createHeader();
-    ?>
-    <?php
      createSidebar();
     ?>
     <div class="detailoverzicht" >
@@ -28,11 +27,9 @@
     <th>Product</th>
     <th>Ingredient</th>
   </tr>
-  <tr>
     <?php  
-    createDetailoverzicht();
+    createdetailoverzicht();
     ?>
-  </tr>
 </table>
     </div>
  </main>

@@ -9,7 +9,7 @@ function createbestellinglijst() {
     $sql = "SELECT u.username, u.address, o.datetime, o.status, p.name, p.price, p.type_id
     FROM Product AS p, Pizza_Order AS o, User1 AS u
     WHERE username = '$user'
-	ORDER BY datetime;
+	ORDER BY o.status, o.datetime;
     "
     ;
     $query = $db->query($sql);

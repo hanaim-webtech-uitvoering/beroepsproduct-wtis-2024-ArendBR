@@ -5,14 +5,14 @@ require_once "db_connectie.php";
 function createbestellingoverzicht() {
     $db = maakverbinding();
 
-    	$sql ="	SELECT o.order_id, u.username, u.address, o.datetime, o.status, p.name, p.price, p.type_id
+    	$sql ="	SELECT o.order_id, u.username, u.address, o.datetime, o.status, o.personnel_username, p.name, p.price, p.type_id
 		FROM Product AS p
 		JOIN Pizza_Order_Product AS pop ON pop.product_name = p.name
 		JOIN Pizza_Order AS o ON o.order_id = pop.order_id
 		JOIN User1 AS u ON u.username = o.client_username
 		ORDER BY o.status, o.datetime;";
-    $stmt = $db->query($sql);
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $query = $db->query($sql);
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($results as $result ) {
 
@@ -22,6 +22,7 @@ function createbestellingoverzicht() {
     <td>" . $result["address"] . "</td>
     <td>" . $result["datetime"] . "</td>
     <td>" . $result["status"] . "</td>
+    <td>" . $result["personnel_username"] . "</td>
     <td>" . $result["name"] . "</td>
     <td>" . $result["price"] . "</td>
     <td>" . $result["type_id"] . "</td>
@@ -35,8 +36,8 @@ function createbestellingoverzicht() {
     </td>
 
     <td>
-        <form method='POST'>
-            <input type='hidden' name='order_id' value='" . $result['order_id'] . "'>
+        <form action='../detailoverzicht.php' method='POST'>
+            <input type='hidden' name='product' value='" . $result['name'] . "'>
             <input type='submit' name='detailoverzicht' value='Detailoverzicht'>
         </form>
     </td>

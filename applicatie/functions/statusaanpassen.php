@@ -14,9 +14,6 @@ if (isset($_POST['order_id']) && isset($_POST['status'])) {
     $sql = "UPDATE Pizza_Order SET status = ? WHERE order_id = ?";
     $stmt = $db->prepare($sql);
     $stmt->execute([$nieuweStatus, $orderId]);
-
-    // Terug naar overzicht
-   // header("Location: ../bestellingoverzicht.php");
     exit;
 } else {
     echo "Ongeldige invoer.";

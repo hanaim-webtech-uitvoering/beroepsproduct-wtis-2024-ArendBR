@@ -33,6 +33,7 @@
     <th>adres</th>
     <th>datetime</th>
     <th>status</th>
+    <th>Bestellingbehandelaar</th>
     <th>product</th>
     <th>prijs</th>
     <th>type product </th>
@@ -41,8 +42,7 @@
 
 <?php
 createbestellingoverzicht();
-if (isset($_POST["statusaanpassen"])) { statusaanpassen(); } 
-if (isset($_POST["detailoverzicht"])) { createdetailoverzicht(); }  
+if (isset($_POST["statusaanpassen"])) { statusaanpassen(); }   
 ?>
 </table>
 </form>
