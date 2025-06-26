@@ -1,6 +1,8 @@
 <?php
 function createbestellinglijst() {
-        echo'<h1>' . $_SESSION["username"]. '</h1>';
+    echo '<h1>' . $_SESSION['role'] . '</h1>';    
+    echo'<h1>' . $_SESSION["username"]. '</h1>';
+        
     $user = $_SESSION["username"]; 
     $db = maakverbinding();
 
@@ -10,9 +12,9 @@ function createbestellinglijst() {
 	ORDER BY datetime;
     "
     ;
-    $stmt = $db->query($sql);
-    $stmt->execute([$user]); 
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $query = $db->query($sql);
+    $query->execute([$user]); 
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($results as $result ) {
 

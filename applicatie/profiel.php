@@ -21,6 +21,8 @@
     createHeader();
     createSidebar();
     ?>
+   <div class="outer-wrapper" >
+      <div class="table-wrapper">
 <table>
 <th>Username</th>
 <th>Adres</th>
@@ -34,7 +36,8 @@
      createbestellinglijst();
     ?>
 </table>
-  
+</div>
+</div>
 
   </main>
 

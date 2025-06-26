@@ -3,26 +3,24 @@
 if (isset($_POST['inloggen'])) {
     $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
-    $hash = password_hash(($_POST['password']), PASSWORD_DEFAULT);
  require_once "../db_connectie.php";
     $db = maakVerbinding(); 
 
-    $sql = "SELECT username, password
+    $sql = "SELECT username, password, role
         from User1
-        where username = :username and password = :password";
- 
+        where username = ?;";
     $query = $db->prepare($sql);
     $query->execute(
         [
             htmlspecialchars($_POST['username']),
-            password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT)
         ]
     );
-
-if (password_verify(($_POST['username']), $hash)) {
+$user = $query->fetch(PDO::FETCH_ASSOC);
+if ($user && password_verify($password, $user['password'])) {    
    echo 'password is valid';
      session_start();
    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["role"] = $user['role'];
         header("Location: ../index.php");
     } else {
         header("Location: ../loginregistratie.php?msg");

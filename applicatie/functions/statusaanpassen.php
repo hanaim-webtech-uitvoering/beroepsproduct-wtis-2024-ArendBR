@@ -1,29 +1,25 @@
 <?php
-if (isset($_POST["status"])) {
-   require_once "../db_connectie.php";
+function statusaanpassen() {
+   require_once "db_connectie.php";
     $db = maakVerbinding(); 
-$status = $_POST["status"];
- if ($status = 1) {
-  $sql = "UPDATE status
-  SET status = 2  
-  WHERE status = 1;";
-$query = $db->prepare($sql);
-$query->execute();
+if (isset($_POST['order_id']) && isset($_POST['status'])) {
 
- } elseif ($status = 2){
-   $sql2 = "UPDATE status
-  SET status = 3  
-  WHERE status = 2;";
-  $query = $db->prepare($sql);
-  $query->execute();
+    $orderId = $_POST['order_id'];
+    $huidigeStatus = (int)$_POST['status'];
 
- } elseif ($status = 3){
-   $sql3 = "UPDATE status
-  SET status = 1  
-  WHERE status = 3;";
-$query = $db->prepare($sql);
-$query->execute();
+    // Bepaal nieuwe status
+    $nieuweStatus = $huidigeStatus === 3 ? 1 : $huidigeStatus + 1;
 
- }
+    // Update query
+    $sql = "UPDATE Pizza_Order SET status = ? WHERE order_id = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$nieuweStatus, $orderId]);
 
+    // Terug naar overzicht
+   // header("Location: ../bestellingoverzicht.php");
+    exit;
+} else {
+    echo "Ongeldige invoer.";
+}
+}
 ?>

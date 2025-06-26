@@ -1,38 +1,47 @@
 <?php
 require_once "db_connectie.php";
-require_once "createmenu.php";
+
 
 function createbestellingoverzicht() {
     $db = maakverbinding();
 
-    $sql = "SELECT u.username, u.address, o.datetime, o.status, p.name, p.price, p.type_id
-    FROM Product AS p, Pizza_Order AS o, User1 AS u
-	 ORDER BY o.status;
-    "
-    ;
-    
+    	$sql ="	SELECT o.order_id, u.username, u.address, o.datetime, o.status, p.name, p.price, p.type_id
+		FROM Product AS p
+		JOIN Pizza_Order_Product AS pop ON pop.product_name = p.name
+		JOIN Pizza_Order AS o ON o.order_id = pop.order_id
+		JOIN User1 AS u ON u.username = o.client_username
+		ORDER BY o.status, o.datetime;";
     $stmt = $db->query($sql);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($results as $result ) {
 
+     echo "
+    <tr>
+    <td>" . $result["username"] . "</td>
+    <td>" . $result["address"] . "</td>
+    <td>" . $result["datetime"] . "</td>
+    <td>" . $result["status"] . "</td>
+    <td>" . $result["name"] . "</td>
+    <td>" . $result["price"] . "</td>
+    <td>" . $result["type_id"] . "</td>
 
+    <td>
+        <form method='POST'>
+            <input type='hidden' name='order_id' value='" . $result['order_id'] . "'>
+            <input type='hidden' name='status' value='" . $result['status'] . "'>
+            <input type='submit' name='statusaanpassen' value='Status aanpassen'>
+        </form>
+    </td>
 
-    echo " <tr>";
-    echo "   <td>" . $result["username"] . " </td>";
-    echo "   <td>" . $result["address"] . " </td>";
-    echo "   <td>" . $result["datetime"] . " </td>";
-    echo "   <td>" . $result["status"] . " </td>";
-    echo "    <td>" . $result["name"] . " </td>";
-    echo "    <td>" . $result["price"] . "</td>";
-    echo "    <td>" . $result["type_id"] . "</td>";
-     echo" <td>";
-     echo "<input type='submit' name='statusaanpassen' value=status aanpassen>";
-     echo" </td>";
-     echo" <td>";
-     echo "<input type='submit' name='detailoverzicht' value=detailoverzicht>";
-     echo" </td>";
-     echo" </tr>";
+    <td>
+        <form method='POST'>
+            <input type='hidden' name='order_id' value='" . $result['order_id'] . "'>
+            <input type='submit' name='detailoverzicht' value='Detailoverzicht'>
+        </form>
+    </td>
+
+    </tr>";
     } 
 }
 ?>

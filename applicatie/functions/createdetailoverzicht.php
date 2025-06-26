@@ -1,6 +1,5 @@
 <?php
 function createdetailoverzicht() {
-if (isset($_POST["detailoverzicht"])) {
     $db = maakVerbinding(); 
     $sql = "SELECT *
             FROM Product_Ingredient;";
@@ -18,7 +17,6 @@ if (isset($_POST["detailoverzicht"])) {
         echo" <td>" . $result["ingredient_name"] . "</td>";
         echo" </tr>";
     } 
-}
 }
 //} 
 ?>

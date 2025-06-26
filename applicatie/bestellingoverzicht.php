@@ -2,6 +2,8 @@
  require_once "functions/header.php";
  require_once "functions/sidebar.php";
  require_once "functions/createbestellingoverzicht.php";
+ require_once "functions/statusaanpassen.php";
+ require_once "functions/createdetailoverzicht.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +27,7 @@
     ?>
    <div class="outer-wrapper" >
       <div class="table-wrapper">
-        <form action="functions/statusaanpassen.php" method = "$_GET">
+        <form action='' method='POST'>
       <table>
     <th>naam</th>
     <th>adres</th>
@@ -39,6 +41,8 @@
 
 <?php
 createbestellingoverzicht();
+if (isset($_POST["statusaanpassen"])) { statusaanpassen(); } 
+if (isset($_POST["detailoverzicht"])) { createdetailoverzicht(); }  
 ?>
 </table>
 </form>

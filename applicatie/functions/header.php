@@ -3,8 +3,8 @@ session_start();
  require_once 'db_connectie.php';
 function createHeader()
 {
-     if (isset($_SESSION['username'])) {
-//   if (isset($_SESSION['username']) && ($_SESSION["role"] == 'personnel')) {
+     if (isset($_SESSION['username']) && $_SESSION["role"] === 'Personnel') {
+      // Gebruiker met de rol Personnel
     echo '    
     <nav class="topnav">
     <ul class="flex-menu">
@@ -23,6 +23,7 @@ function createHeader()
   </ul>
   </nav>';
   } elseif (isset($_SESSION['username'])) {
+    // Gewone gebruiker (client)
     echo '    
     <nav class="topnav">
     <ul class="flex-menu">
@@ -37,6 +38,7 @@ function createHeader()
   </ul>
   </nav>';
    }  else {
+    //Niet ingelogd
     echo '
   <nav class="topnav">
   <ul class="flex-menu">
