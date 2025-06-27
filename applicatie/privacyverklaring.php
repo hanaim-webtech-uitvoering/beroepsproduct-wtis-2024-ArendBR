@@ -3,10 +3,8 @@
  require_once "functions/header.php";
  require_once "functions/sidebar.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,17 +14,12 @@
 
 <body>
   <main>
-
     <?php
     createHeader();
+    createSidebar();
+    echo "Privacyverklaring";
     ?>
-    <?php
-     createSidebar();
-    ?>
-<?php 
-echo "Privacyverklaring";
-?>
-    <p> '🍕 Privacyverklaring – Sole Machina <br>
+    <p> 🍕 Privacyverklaring Sole Machina <br>
 Laatst bijgewerkt: 25 juni 2025<br>
 
 Bij [Pizzeria Naam] vinden wij jouw privacy erg belangrijk. In deze privacyverklaring leggen wij uit welke persoonsgegevens wij verzamelen via onze website en hoe wij hiermee omgaan.<br>
@@ -118,13 +111,10 @@ Voor vragen of verzoeken over privacy kun je contact opnemen met:<br>
 Sole Machina <br>
 E-mail: Sole@Machina.nl <br>
 Telefoon: 012-3456789 <br>
-
 </p>
-  </main>
-
-  <?php
+</main>
+<?php
   createFooter();
-  ?>
+?>
 </body>
-
 </html>

@@ -15,27 +15,30 @@ function createmenuoverzicht() {
     }
   if (isset($_SESSION['username'])) { 
     foreach ($results as $result ) {
-    echo" 
-<tr>  
-<td>" . $result["name"] . "</td>
-<td>" . $result["type_id"] . "</td>
-<td> <input type='number' min='1' name='aantal' value='1'> </td>
-<td>" . $result["price"] . "</td>
-<td> <input type='submit' name='toevoegen' value='toevoegen'> </td>
-<td> <input type='hidden' name='product' value=". $result["name"] . "> </td>
-<td> <input type='hidden' name='producttype' value=". $result["type_id"] ."> </td>
-<td> <input type='hidden' name='prijs' value=" . $result["price"] ."> </td>
-</tr> "; 
+          echo "<tr>
+        <form method='POST'>
+            <td>{$result['name']}</td>
+            <td>{$result['type_id']}</td>
+            <td><input type='number' name='aantal' min='1' value='1'></td>
+            <td>€ {$result['price']}</td>
+            <td><input type='submit' name='toevoegen' value='Toevoegen'></td>
+            <input type='hidden' name='product' value='{$result['name']}'>
+            <input type='hidden' name='producttype' value='{$result['type_id']}'>
+            <input type='hidden' name='prijs' value='{$result['price']}'>
+        </form>
+    </tr>";
     }
   } else {
     echo" <h1> Inloggen voor bestelling is verplicht</h1>";
   foreach ($results as $result ) {
 
     echo" 
-<tr>  
+<tr> 
+<form method ='post'> 
 <td>" . $result["name"] . "</td>
 <td>" . $result["type_id"] . "</td>
 <td>" . $result["price"] . "</td>
+</form>
 </tr> "; 
     }
   }

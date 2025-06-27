@@ -1,6 +1,11 @@
 <?php
 function verwijderenwinkelmand() {
-  unset($_POST['product'], $_POST['producttype'], $_POST['aantal'], $_POST['prijs']);  
+  $winkelmand = $_POST['winkelmand'];
+
+    if (isset($_SESSION['winkelmand'][$winkelmand])) {
+        unset($_SESSION['winkelmand'][$winkelmand]);
+
+    }  
 }
 
 ?>

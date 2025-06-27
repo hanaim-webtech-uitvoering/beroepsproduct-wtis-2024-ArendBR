@@ -2,25 +2,33 @@
 function toevoegenwinkelmand() {
 $product = $_POST['product'];
 $producttype = $_POST['producttype'];
-$aantal = $_POST['aantal'];
-$prijs = $_POST['prijs'];
-$totaleprijs = $prijs * $aantal;
+$aantal = (int)$_POST['aantal'];
+$prijs = (float)$_POST['prijs'];
+$item = [
+        'product' => $product,
+        'producttype' => $producttype,
+        'aantal' => $aantal,
+        'prijs' => $prijs
+    ];
 
-echo"
-<tr>
-<td>" . $product . "</td>
-<td>" . $producttype . "</td>
-<td> <input type='number' min='1' name='aantal' value='$aantal'><input type='submit' name='update' value='update'> </td>
-<td>" . $prijs ."</td>
-<td> <input type='submit' name='verwijderen' value='verwijderen'> </td>
-<td> <input type='hidden' name='product' value=". $product . "> </td>
-<td> <input type='hidden' name='producttype' value=". $producttype ."> </td>
-<td> <input type='hidden' name='prijs' value=" . $prijs ."> </td>
-</tr>
-<tr>
-<td> <a href='betaalpagina.php' class='button'><input type='submit' name='betalen' value='betalen'> </a></td>
-<td> totaal: $" . $totaleprijs . " </td>
-</tr>
-";
+    // Winkelmandje in sessie aanmaken als die nog niet bestaat
+    if (!isset($_SESSION['winkelmand'])) {
+        $_SESSION['winkelmand'] = [];
+    }
+
+    // Controleren of item al bestaat (op basis van productnaam)
+    $gevonden = false;
+    foreach ($_SESSION['winkelmand'] as $winkelmand => $bestaatitem) {
+        if ($bestaatitem['product'] === $product) {
+            // Voeg aantallen samen
+            $_SESSION['winkelmand'][$winkelmand]['aantal'] += $aantal;
+            $gevonden = true;
+            break;
+        }
+    }
+
+    if (!$gevonden) {
+        $_SESSION['winkelmand'][] = $item;
+    }   
 }
 ?>

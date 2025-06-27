@@ -12,29 +12,20 @@
   <link rel="stylesheet" href="style.css" />
   <title>Sole Machina</title>
 </head>
-
-<?php
- createHeader();
-?>
-
 <body>
   <main>
-
-
     <?php
+    createHeader();
     createSidebar();
     ?>
-
     <div class="content-right">
       <div class="startpaginatext">
         <h1>Welkom bij Sole Machina</h1>
       </div>
     </div>
   </main>
-
   <?php
   createFooter();
   ?>
 </body>
-
 </html>
