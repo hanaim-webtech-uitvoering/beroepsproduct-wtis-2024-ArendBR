@@ -9,7 +9,7 @@ function createbestellingoverzicht() {
 		FROM Product AS p
 		JOIN Pizza_Order_Product AS pop ON pop.product_name = p.name
 		JOIN Pizza_Order AS o ON o.order_id = pop.order_id
-		JOIN User1 AS u ON u.username = o.client_username
+		JOIN [User] AS u ON u.username = o.client_username
 		ORDER BY o.status, o.datetime;";
     $query = $db->query($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);

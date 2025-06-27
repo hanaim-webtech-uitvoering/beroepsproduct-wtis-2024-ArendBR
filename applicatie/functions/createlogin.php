@@ -1,6 +1,5 @@
 <?php
-// Een personeelsaccount kan niet aangemaakt worden, aangezien er geen admin account is. 
-// Om in te loggen op een personeels account gebruik: Gebruikersnaam: medewerker1 en Wachtwoord: medewerker1   
+// Een personeelsaccount moet normaal alleen met admin aangemaakt kunnen worden, maar heb geen adminaccount gemaakt. Dit is nu even de oplossing voor de demo. 
 if (isset($_POST['inloggen'])) {
     $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
@@ -8,7 +7,7 @@ if (isset($_POST['inloggen'])) {
     $db = maakVerbinding(); 
 
     $sql = "SELECT username, password, role
-        from User1
+        from [User]
         where username = ?;";
     $query = $db->prepare($sql);
     $query->execute(

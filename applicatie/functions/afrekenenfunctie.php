@@ -12,7 +12,7 @@ $db = maakverbinding();
     }
 // adres ophalen dat gekoppeld is aan de gebruiker    
 $sql ="	SELECT username, address
-		FROM User1
+		FROM [User]
 		WHERE username = ?;";
 $query = $db->prepare($sql);
 $query->execute([$user]);

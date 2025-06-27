@@ -16,7 +16,7 @@ function bestellingplaatsen() {
         $adres = $_POST['bezorgadres'];
     } else {
         // Haal adres op uit database
-        $sql3 = "SELECT address FROM User1 WHERE username = ?;";
+        $sql3 = "SELECT address FROM [User] WHERE username = ?;";
         $query = $db->prepare($sql3);
         $query->execute([$user]);
         $adresresultaat = $query->fetch(PDO::FETCH_ASSOC);
@@ -26,7 +26,7 @@ function bestellingplaatsen() {
     $datumtijd = date('Y-m-d H:i:s');
     $status = 1;
     $client = $user;
-    $personeel = 'Medewerker1';
+    $personeel = 'rdeboer';
 
         // Voeg bestelling toe aan Pizza_Order
         $sql = "INSERT INTO Pizza_Order (client_username, client_name, personnel_username, datetime, status, address)

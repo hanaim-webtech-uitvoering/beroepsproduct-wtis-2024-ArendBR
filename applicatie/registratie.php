@@ -21,7 +21,7 @@
     <div class="containermain">
       <form action="functions/createregistratie.php" method="POST"> 
         <div>
-          <h1> Login </h1>
+          <h1> Registratie </h1>
         </div>
         <div>
           <label><b>Gebruikersnaam:</b></label>
@@ -45,7 +45,10 @@
         </div>
         <div>
           <label><b>Rol:</b></label>
-          <input name="role"  type="text" value="Client" readonly />
+          <select name="role" required>
+          <option value="Client">Client</option>
+          <option value="Personnel">Personnel</option>
+  </select>
         </div>
         <div>
           <button name="registratie" value="registratie" type="submit">registratie</button>
