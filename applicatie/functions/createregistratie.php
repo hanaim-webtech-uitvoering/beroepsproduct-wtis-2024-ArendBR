@@ -1,4 +1,6 @@
 <?php
+// Een personeelsaccount kan niet aangemaakt worden, aangezien er geen admin account is. 
+// Om in te loggen op een personeels account gebruik: Gebruikersnaam: medewerker1 en Wachtwoord: medewerker1
 if (isset($_POST['registratie'])) {
      require_once "../db_connectie.php";
     $db = maakVerbinding(); 

@@ -1,5 +1,6 @@
 <?php
-   
+// Een personeelsaccount kan niet aangemaakt worden, aangezien er geen admin account is. 
+// Om in te loggen op een personeels account gebruik: Gebruikersnaam: medewerker1 en Wachtwoord: medewerker1   
 if (isset($_POST['inloggen'])) {
     $username = htmlspecialchars($_POST['username']) ;
     $password = htmlspecialchars($_POST['password']) ;
