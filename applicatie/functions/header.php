@@ -9,8 +9,8 @@ function createHeader()
     <nav class="topnav">
     <ul class="flex-menu">
       <li>
-        <a href="index.php" class="logo">
-          <img src="Pizzalogo.png" alt="" class="logo"/>
+        <a href="index.php">
+          <img src="../Afbeeldingen/Pizzalogo.png" alt="" class="logo"/>
         </a>
       </li>  
       <li>
@@ -28,8 +28,8 @@ function createHeader()
     <nav class="topnav">
     <ul class="flex-menu">
       <li>
-        <a href="index.php" class="logo">
-          <img src="Pizzalogo.png" alt="" class="logo"/>
+        <a href="index.php">
+          <img src="../Afbeeldingen/Pizzalogo.png" alt="" class="logo"/>
         </a>
       </li>  
       <li>                  
@@ -43,8 +43,8 @@ function createHeader()
   <nav class="topnav">
   <ul class="flex-menu">
     <li>
-      <a href="index.php" class="logo">
-        <img src="afbeeldingen/Pizzalogo.png" alt="" />
+      <a href="index.php">
+        <img src="../Afbeeldingen/Pizzalogo.png" alt="" class="logo" />
       </a>
     </li>
   <li>
